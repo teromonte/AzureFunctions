@@ -49,6 +49,8 @@ public class TimerFunction {
     public void cosmosFunction2(@TimerTrigger(name = "cacheGarbageWipe", schedule = "30 */1 * * * *") String timerInfo, ExecutionContext context) {
         try (Jedis jedis = RedisCache.getCachePool().getResource()) {
 			List<String> users = jedis.lrange("deleted", 0, -1);
+			if(users==null)
+				return;
 			for(String userID : users) {
 				List<BidDAO> bids = getC2().getContainer().queryItems("SELECT * FROM bids WHERE bids.user=\"" + userID + "\"", new CosmosQueryRequestOptions(), BidDAO.class).stream().toList();
 				for(BidDAO b : bids)
