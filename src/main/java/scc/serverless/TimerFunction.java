@@ -46,7 +46,7 @@ public class TimerFunction {
     }
 	
 	@FunctionName("garbage-collect")
-    public void cosmosFunction2(@TimerTrigger(name = "cacheGarbageWipe", schedule = "30 */1 * * * *") String timerInfo, ExecutionContext context) {
+    public void cosmosFunction2(@TimerTrigger(name = "cacheGarbageWipe", schedule = "10 */1 * * * *") String timerInfo, ExecutionContext context) {
         try (Jedis jedis = RedisCache.getCachePool().getResource()) {
 			List<String> users = jedis.lrange("deleted", 0, -1);
 			if(users==null)
