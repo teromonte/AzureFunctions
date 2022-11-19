@@ -14,10 +14,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <functionAppName>scc2223funwesteuropenmp</functionAppName>
+        <functionAppName>scc2223funwesteurope55355</functionAppName>
         <functionAppRegion>westeurope</functionAppRegion>
         <functionPricingTier>B1</functionPricingTier>
-        <functionResourceGroup>scc23-rg-westeurope-nmp</functionResourceGroup>
+        <functionResourceGroup>scc23-rg-westeurope-55355</functionResourceGroup>
     </properties>
 
     <dependencies>
